@@ -33,3 +33,7 @@ sumArr.sort(function (a, b) {
 });
 
 console.log(sumArr);
+//get sum of the top three highest values 
+var topThree = sumArr[0] + sumArr[1] + sumArr[2]; 
+
+console.log(topThree)
