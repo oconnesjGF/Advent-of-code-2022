@@ -2,15 +2,6 @@ var input = document.body.innerText.split(/[a,b,c,x,y,z\n]/gm);
 input.pop();
 var newArr = [];
 
-var choices = {
-  A: "Rock",
-  B: "Paper",
-  C: "Scissors",
-  X: "Rock",
-  Y: "Paper",
-  Z: "Scissors"
-};
-
 var pointValue = {
   Rock: 1,
   Paper: 2,
