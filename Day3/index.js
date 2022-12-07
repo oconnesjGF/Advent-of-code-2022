@@ -62,11 +62,15 @@ var pValue = {
 var newArr = [];
 var sum = 0;
 
-for (var x = 0; x < input.length; x++) {
+for (var a = 0; a < input.length; a++) {
   newArr.push([
-    input[x].slice(0, input[x].length / 2).split(""),
-    input[x].slice(input[x].length / 2).split("")
+    input[a].slice(0, input[a].length / 2).split(""),
+    input[a].slice(input[a].length / 2).split("")
   ]);
 }
 
-
+for (var x = 0; x < newArr.length; x++) {
+  var value = newArr[x][0].filter((element) => newArr[x][1].includes(element));
+  sum += pValue[value[0]];
+}
+console.log(sum);
