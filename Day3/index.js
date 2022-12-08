@@ -62,15 +62,46 @@ var pValue = {
 var newArr = [];
 var sum = 0;
 
+/*
+//First Part Logic 
 for (var a = 0; a < input.length; a++) {
   newArr.push([
     input[a].slice(0, input[a].length / 2).split(""),
     input[a].slice(input[a].length / 2).split("")
   ]);
 }
+console.log(newArr)
 
 for (var x = 0; x < newArr.length; x++) {
   var value = newArr[x][0].filter((element) => newArr[x][1].includes(element));
+  console.log(value)
+  //sum += pValue[value[0]];
+}
+*/
+//first loop push every 3 lines into a nested array 
+for (var x = 0; x < input.length; x++) {
+  if (x % 3 === 0) {
+    newArr.push(input.slice(x, x + 3));
+  }
+}
+
+//first loop sorts the nested arrays from largest to smallest
+//Sorting is left over logic from an earlier attempt at the problem 
+//The s loop also splits each letter into its own nested array
+for (var y = 0; y < newArr.length; y++) {
+  //console.log(newArr[y])
+  NewArr[y].sort((b, a) => a.length - b.length);
+  //console.log(newArr[y])
+  for (var w = 0; w < newArr[y].length; w++) {
+    newArr[y][w] = newArr[y][w].split("");
+  }
+}
+//last loop first filters the common values from [0][1] positions in the array
+// then it looks for the common value from the update value array and newarray[2]
+for (var a = 0; a < newArr.length; a++) {
+  var value = newArr[a][0].filter((element) => newArr[a][1].includes(element));
+  value = value.filter((element) => newArr[a][2].includes(element));
   sum += pValue[value[0]];
 }
+
 console.log(sum);
